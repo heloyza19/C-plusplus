@@ -5,6 +5,7 @@
 #include "vetor.cpp"
 #include "matriz.cpp"
 
+
 class linearAlgebra
 {
 public:

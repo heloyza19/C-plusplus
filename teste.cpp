@@ -5,8 +5,8 @@ using namespace std;
 
 int main(){
 
-int tam=3;
-double A[tam]={1, 2,3};
+int tam=4;
+double A[tam]={1, 2,3,4};
 
 vetor *U= new vetor(tam);
 U->setV(A);
