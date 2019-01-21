@@ -13,6 +13,7 @@ public:
 	void setV(double A[]);
 	double* getV();
 	int getsize();
+	void setV(int i, double r);
 
 private:
     void setsize(int t);

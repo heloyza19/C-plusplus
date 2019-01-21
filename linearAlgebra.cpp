@@ -87,6 +87,19 @@ else
 }
 
 
+vetor* linearAlgebra::produto(double A,vetor* B){
+vetor *C=new vetor(B->getsize());
+double *vetor1=B->getV();
+double p=0;
+for(int i=0;i<B->getsize();i++){
+p=*(vetor1+i)*A;
+C->setV(i,p);
+}
+return C;
+}
+
+
+
 
 matriz* linearAlgebra::add(matriz* A,matriz* B)
 {
@@ -149,6 +162,24 @@ std::cout<<"os requisitos para a multiplicacao nao foram cumpridos"<<std::endl;
 
 return produto;
 
+}
+
+matriz* linearAlgebra::produto(double A,matriz*B){
+
+double** M1=B->getM();
+double p=0;
+
+matriz *prod=new matriz(B->getsize()[0],B->getsize()[1]);
+
+for(int i=0;i<B->getsize()[0];i++)
+    {
+    for (int j=0;j<B->getsize()[1];j++)
+    {
+        p=*(*(M1+i)+j)*A;
+        prod->setM(i,j,p);
+    }
+    }
+    return prod;
 }
 
 

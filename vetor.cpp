@@ -35,3 +35,8 @@ Size=t;
 int vetor::getsize(){
 return Size;
 }
+
+
+void vetor::setV(int i, double r){
+*(V+i)=r;
+}
