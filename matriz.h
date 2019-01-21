@@ -4,10 +4,12 @@
 class matriz{
 
 private:
+
 int Size[2];
 double **M;
 
 public:
+
 matriz(int m, int n);
 void setsize(int m,int n);
 void setM(double S[]);

@@ -7,14 +7,14 @@ linearAlgebra::linearAlgebra(){
 }
 
 vetor* linearAlgebra::add(vetor* A, vetor* B){
-if(A->Size==B->Size){
+if(A->getsize()==B->getsize()){
     double *vetor1=A->getV();
     double *vetor2=B->getV();
-    double c[A->Size];
+    double c[A->getsize()];
 
-    vetor *C=new vetor(A->Size);
+    vetor *C=new vetor(A->getsize());
 
-    for(int i=0;i<A->Size;i++){
+    for(int i=0;i<A->getsize();i++){
      c[i]=*(vetor1+i)+ *(vetor2+i);
     }
 
@@ -26,7 +26,7 @@ else
 {
     cout<<"Vetores com tamanhos diferentes"<<endl;
 
-    vetor *C=new vetor(A->Size);
+    vetor *C=new vetor(A->getsize());
     return C;
 }
 }
@@ -36,13 +36,13 @@ else
 
 vetor* linearAlgebra::crossproduct(vetor* A, vetor* B)
 {
-vetor *C=new vetor(A->Size);
+vetor *C=new vetor(A->getsize());
 
-if(A->Size==B->Size && A->Size==3)
+if(A->getsize()==B->getsize() && A->getsize()==3)
 {
     double *vetor1=A->getV();
     double *vetor2=B->getV();
-    double c[A->Size];
+    double c[A->getsize()];
 
     c[0]=(vetor1[1]*vetor2[2])-(vetor1[2]*vetor2[1]);
     c[1]=(vetor1[2]*vetor2[0])-(vetor1[0]*vetor2[2]);
@@ -54,7 +54,7 @@ if(A->Size==B->Size && A->Size==3)
 }
 else
 {
-    cout<<"Vetores com tamanhos diferentes"<<endl;
+    cout<<"ERRO: Produto vetorial so eh definido no R3"<<endl;
     return C;
 }
 
@@ -66,13 +66,13 @@ else
 double linearAlgebra::dotproduct(vetor* A, vetor* B)
 {
 
-if(A->Size==B->Size)
+if(A->getsize()==B->getsize())
 {
     double *vetor1=A->getV();
     double *vetor2=B->getV();
     double c=0;
 
-    for(int i=0;i<A->Size;i++)
+    for(int i=0;i<A->getsize();i++)
     {
        c=c+vetor1[i]*vetor2[i];
     }
