@@ -19,7 +19,13 @@ for (int i=0;i<ny;i++)
 
 C = {1,2,3};
 
-vetor v1;
+vetor v1, v2, v3;
+
+v3 = v1*v2;
+
+v3 = v1+v2;
+
+v3 = v2-10*v1;
 
 v1.setAs(C);
 

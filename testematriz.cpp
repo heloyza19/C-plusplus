@@ -5,6 +5,7 @@
 using namespace std;
 
 int main(){
+
 int l=3, c=3;
 int L=3, C=3;
 

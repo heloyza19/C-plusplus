@@ -3,8 +3,8 @@
 
 vetor::vetor(int t)
 {
-setsize(t);
-V=(double*)calloc(t,sizeof(double));
+return Size;
+V=(double*)calloc(t,sizeof(double)); // mudar para new
 }
 
 
@@ -24,13 +24,14 @@ for(int i=0;i<Size;i++){
 
 double* vetor::getV()
 {
-    return V;
+    return *V;
 }
 
-
+/*
 void vetor::setsize(int t){
 Size=t;
 }
+*/
 
 int vetor::getsize(){
 return Size;

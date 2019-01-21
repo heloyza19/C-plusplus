@@ -16,7 +16,7 @@ public:
 	void setV(int i, double r);
 
 private:
-    void setsize(int t);
+    //void setsize(int t);
     int Size;
     double *V;
 
