@@ -12,12 +12,11 @@ public:
  	vetor();
 	~vetor();
 	void setV(double* A);
-	void setV(int i, double r);
 	double* getV();
 	int getsize();
 
-
-	//vetor* operator +(vetor* A);
+	//operadores
+	vetor* operator + (vetor* A);
 
 private:
     void setsize(int t);

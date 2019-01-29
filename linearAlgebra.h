@@ -25,6 +25,11 @@ public:
 	matriz* produto(double A,matriz*B);
 
 
+
+	//Operadores
+
+	
+
 };
 
 

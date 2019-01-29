@@ -46,7 +46,7 @@ for(int i=0;i<tam;i++){
 }
 cout<<"]\n";
 
-//Multiplicação por escalar
+//Multiplicaï¿½ï¿½o por escalar
 vetor* P=new vetor();
 P=L->produto(2,V);
 double* vetor4=P->getV();
@@ -75,3 +75,5 @@ cout<<"A.B = "<<a<<endl;
 
 return 0;
 }
+
+//vetor* C1=U+V;

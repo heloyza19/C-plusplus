@@ -21,11 +21,6 @@ void vetor::setV(double* A)
 V=A;
 }
 
-//Modificar
-void vetor::setV(int i, double r){
-*(V+i)=r;
-}
-//
 
 double* vetor::getV()
 {
@@ -39,6 +34,26 @@ int vetor::getsize()
 return Size;
 }
 
+vetor* vetor::operator + (vetor* A){
+int tam=this->getsize();
+double* vetor2=this->getV();
+vetor *C= new vetor(A->getsize());
+
+if(A->getsize()==tam){
+
+    double *vetor1=A->getV();
+    double* c=new double[A->getsize()];
+    for(int i=0;i<A->getsize();i++)
+    {
+     *(c+i)=*(vetor1+i)+ *(vetor2+i);
+    }
+    C->setV(c);
+} else{
+std::cout<<"vetores com tamanhos diferentes"<<std::endl;
+}
+return C;
+
+}
 
 /*
 vetor* vetor::operator +(vetor* A)
