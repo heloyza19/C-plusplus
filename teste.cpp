@@ -11,9 +11,9 @@ double* B=new double [tam]{7, 5, 13};
 
 //v1.setAs(C);
 
-vetor *U= new vetor(tam);
-U->setV(A);
-double *vetor1=U->getV();
+vetor U(tam);
+U.setV(A);
+double *vetor1=U.getV();
 
 cout<<"A= [";
 for(int i=0;i<tam;i++){
@@ -21,10 +21,10 @@ for(int i=0;i<tam;i++){
 }
 cout<<"]\n";
 
-vetor *V= new vetor(tam);
-V->setV(B);
-double *vetor2=V->getV();
-
+vetor V(tam);
+V.setV(B);
+double *vetor2=V.getV();
+/*
 cout<<"B= [";
 for(int i=0;i<tam;i++){
    cout<<*(vetor2+i)<<"\t";
@@ -72,8 +72,10 @@ cout<<"]\n";
 //teste produto interno
 double a=L->dotproduct(U,V);
 cout<<"A.B = "<<a<<endl;
+*/
+vetor C1;
+C1=U+V;
 
 return 0;
 }
 
-//vetor* C1=U+V;

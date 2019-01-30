@@ -14,14 +14,16 @@ public:
 	void setV(double* A);
 	double* getV();
 	int getsize();
+	double *V;
+	vetor* add(vetor* A, vetor* B);           //soma de vetores
 
 	//operadores
-	vetor* operator + (vetor* A);
+	vetor operator + (vetor A);
 
 private:
     void setsize(int t);
     int Size;
-    double *V;
+
 
 };
 
