@@ -9,15 +9,20 @@ class vetor
 public:
 
  	vetor(int t);
- 	vetor();
+ 	//vetor();
 	~vetor();
+	vetor (const vetor &A);
 	void setV(double* A);
 	double* getV();
 	int getsize();
 	double *V;
 	vetor* add(vetor* A, vetor* B);           //soma de vetores
 
+	void vetor::print(vetor* A);
+
+
 	//operadores
+	void* operator =(const vetor &A);
 	vetor operator + (vetor A);
 
 private:

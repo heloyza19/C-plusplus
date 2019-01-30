@@ -3,7 +3,7 @@
 
 
 #include "vetor.cpp"
-#include "matriz.cpp"
+#include "matriz.h"
 
 
 class linearAlgebra

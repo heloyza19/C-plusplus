@@ -6,15 +6,35 @@ vetor::vetor(int t)
 Size=t;
 double* V=new double[t];
 }
-vetor::vetor(){
-};
+
 
 vetor::~vetor()
 {
 delete []V;
-delete []&Size;
 }
 
+
+//Construtor de copia
+vetor (const vetor &A)
+{
+
+this->Size=A.Size;
+
+for (int i=0; i<A.Size;i++)
+{
+(this->V)[i]=A.V[i];
+}
+}
+
+
+void vetor::print(vetor* A)
+{
+for(int i=0; i<A->Size;i++)
+{
+std::cout<< A->V[i]<<" ";
+}
+std::cout<<std::endl;
+}
 
 void vetor::setV(double* A)
 {
@@ -35,33 +55,23 @@ return Size;
 }
 
 
-vetor* vetor::add(vetor* A, vetor* B){
-
- vetor *C=new vetor(A->getsize());
-
-if(A->getsize()==B->getsize()){
-
-    double *vetor1=A->getV();
-    double *vetor2=B->getV();
-    double s;
-    double* c=new double[A->getsize()];
-    for(int i=0;i<A->getsize();i++)
-    {
-     *(c+i)=*(vetor1+i)+ *(vetor2+i);
-    //C->setV(i,s);
-    }
-    C->setV(c);
-}
-else
+//Sobrecarga do igual
+void* vetor::operator =(const  vetor &A)
 {
-    std::cout<<"Vetores com tamanhos diferentes"<<std::endl;
+this.Size=A.getsize();
+for (int i=0;i<A->Size;i++)
+{
+this.V[i]=A.V[i];
 }
- return C;
+return this;
 }
 
+
+//Sobrecarga do igual
+//Construtor de cópia-
+//Por que usar o const na sobrecarga do operador
+/*
 vetor vetor::operator + (vetor A){
-
-
 
 if(A.getsize()==this->getsize()){
     vetor C(A.getsize());
@@ -76,3 +86,4 @@ std::cerr<<"vetores com tamanhos diferentes"<<std::endl;
 
 
 }
+*/
