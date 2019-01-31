@@ -1,6 +1,7 @@
 #include "vetor.h"
 using namespace std;
 
+
 vetor::vetor(int t)
 {
 Size=t;
@@ -13,7 +14,7 @@ vetor::~vetor()
 delete []V;
 }
 
-
+/*
 //Construtor de copia
 vetor (const vetor &A)
 {
@@ -26,14 +27,15 @@ for (int i=0; i<A.Size;i++)
 }
 }
 
-
-void vetor::print(vetor* A)
+*/
+void vetor::print()
 {
-for(int i=0; i<A->Size;i++)
+cout<<"=[";
+for(int i=0; i<Size;i++)
 {
-std::cout<< A->V[i]<<" ";
+cout<<*(V+i)<<" ";
 }
-std::cout<<std::endl;
+cout<<"]\n";
 }
 
 void vetor::setV(double* A)
@@ -54,7 +56,7 @@ int vetor::getsize()
 return Size;
 }
 
-
+/*
 //Sobrecarga do igual
 void* vetor::operator =(const  vetor &A)
 {

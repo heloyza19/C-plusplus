@@ -1,6 +1,5 @@
 #ifndef VETOR_H_INCLUDED
 #define VETOR_H_INCLUDED
-
 #include <stdlib.h>
 
 
@@ -11,14 +10,14 @@ public:
  	vetor(int t);
  	//vetor();
 	~vetor();
-	vetor (const vetor &A);
+	//vetor (const vetor &A);
 	void setV(double* A);
 	double* getV();
 	int getsize();
 	double *V;
-	vetor* add(vetor* A, vetor* B);           //soma de vetores
+	//vetor* add(vetor* A, vetor* B);           //soma de vetores
 
-	void vetor::print(vetor* A);
+	void print();
 
 
 	//operadores
