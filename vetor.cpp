@@ -14,9 +14,9 @@ vetor::~vetor()
 delete []V;
 }
 
-/*
+
 //Construtor de copia
-vetor (const vetor &A)
+vetor::vetor (const vetor &A)
 {
 
 this->Size=A.Size;
@@ -27,7 +27,7 @@ for (int i=0; i<A.Size;i++)
 }
 }
 
-*/
+
 void vetor::print()
 {
 cout<<"=[";
@@ -56,23 +56,25 @@ int vetor::getsize()
 return Size;
 }
 
-/*
+
 //Sobrecarga do igual
-void* vetor::operator =(const  vetor &A)
+void vetor::operator =(const  vetor &A)
 {
-this.Size=A.getsize();
-for (int i=0;i<A->Size;i++)
+
+this->Size=A.Size;
+for (int i=0;i<A.Size;i++)
 {
-this.V[i]=A.V[i];
+this->V[i]=A.V[i];
 }
-return this;
+
+
 }
 
 
 //Sobrecarga do igual
 //Construtor de cópia-
 //Por que usar o const na sobrecarga do operador
-/*
+
 vetor vetor::operator + (vetor A){
 
 if(A.getsize()==this->getsize()){
@@ -85,7 +87,4 @@ if(A.getsize()==this->getsize()){
 } else{
 std::cerr<<"vetores com tamanhos diferentes"<<std::endl;
 }
-
-
 }
-*/
