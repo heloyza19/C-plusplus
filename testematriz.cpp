@@ -1,5 +1,5 @@
 #include <iostream>
-#include "linearAlgebra.cpp"
+#include "matriz.cpp"
 using namespace std;
 
 int main(){
@@ -36,36 +36,17 @@ for(int j=0;j<C;j++)
 }
 }
 
-matriz* Mat=new matriz(l,c);
-Mat->setM(M1);
-double** matriz1 =Mat->getM();
+matriz Mat (l,c);
+Mat.setM(M1);
+Mat.print();
 
-matriz* Mat2=new matriz(L,C);
-Mat2->setM(M2);
-double** matriz2 =Mat2->getM();
 
-cout<<"\nmatriz1= "<<endl;
+matriz Mat2(L,C);
+Mat2.setM(M2);
+Mat2.print();
 
-for (int i=0;i<l;i++)
-{
-for(int j=0;j<c;j++)
-{
-cout<<*(*(matriz1+i)+j)<<"\t";
-}
-cout<<endl;
-}
 
-cout<<"\nmatriz2= "<<endl;
-
-for (int i=0;i<L;i++)
-{
-for(int j=0;j<C;j++)
-{
-cout<<*(*(matriz2+i)+j)<<"\t";
-}
-cout<<endl;
-}
-
+/*
 linearAlgebra* op= new linearAlgebra();
 
 
@@ -113,6 +94,6 @@ cout<<endl;
 }
 
 
-
+*/
 return 0;
 }

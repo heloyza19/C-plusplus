@@ -1,6 +1,7 @@
 #include "linearAlgebra.h"
 
 
+
 using namespace std;
 
 linearAlgebra::linearAlgebra(){
@@ -142,11 +143,9 @@ double** Ma=A->getM();
 double** Mb=B->getM();
 double prod;
 double** p=new double*[A->getsize()[0]];
-//p=(double**) calloc(A->getsize()[0],sizeof(double*));
 
 
 for(int i=0;i<A->getsize()[0];i++){
-//p=(double*) calloc(B->getsize()[1],sizeof(double));
 
 p[i]=new double[B->getsize()[1]];
 }
@@ -156,7 +155,6 @@ p[i]=new double[B->getsize()[1]];
   {
   for(int j=0;j<B->getsize()[1];j++)    //colunas da nova matriz
   {
-    prod=0;
     *(*(p+i)+j)=0;
   for (int k=0; k<A->getsize()[1];k++)   //linhas da matriz antiga
   {
@@ -166,9 +164,9 @@ p[i]=new double[B->getsize()[1]];
   }
   }
   produto->setM(p);
-  //produto->setM(p);
+ 
   }else{
-std::cout<<"os requisitos para a multiplicacao nao foram cumpridos"<<std::endl;
+cout<<"os requisitos para a multiplicacao nao foram cumpridos"<<endl;
 }
 
 return produto;
