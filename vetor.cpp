@@ -15,18 +15,6 @@ delete []V;
 }
 
 
-//Construtor de copia
-vetor::vetor (const vetor &A)
-{
-
-this->Size=A.Size;
-
-for (int i=0; i<A.Size;i++)
-{
-(this->V)[i]=A.V[i];
-}
-}
-
 
 void vetor::print()
 {
@@ -58,15 +46,17 @@ return Size;
 
 
 //Sobrecarga do igual
-void vetor::operator =(const  vetor &A)
+void vetor::operator =(const vetor &A) //const
 {
 
 this->Size=A.Size;
+
+double* vetor1= new double[A.Size];
 for (int i=0;i<A.Size;i++)
 {
-this->V[i]=A.V[i];
+*(vetor1+i)=*(A.V+i);
 }
-
+this->setV(vetor1);
 
 }
 
@@ -75,16 +65,53 @@ this->V[i]=A.V[i];
 //Construtor de cópia-
 //Por que usar o const na sobrecarga do operador
 
-vetor vetor::operator + (vetor A){
 
-if(A.getsize()==this->getsize()){
-    vetor C(A.getsize());
-    for(int i=0;i<A.getsize();i++)
+
+//Construtor de copia
+vetor::vetor (const vetor &A)
+{
+this->Size=A.Size;
+double* c=new double[A.Size];
+for (int i=0; i<A.Size;i++)
+{
+*(c+i)=A.V[i];
+}
+this->setV(c);
+}
+
+vetor vetor::operator + (vetor &A){
+if(A.Size==this->Size){
+    vetor C(A.Size);
+    double* c=new double[A.Size];
+
+    for(int i=0;i<A.Size;i++)
     {
-     *(C.V+i)=*(this->V+i)+ *(A.V+i);
+     *(c+i)=this->V[i]+ A.V[i];
     }
+
+    C.setV(c);
+
     return C;
 } else{
 std::cerr<<"vetores com tamanhos diferentes"<<std::endl;
 }
 }
+
+vetor vetor::operator - (vetor &A){
+if(A.Size==this->Size){
+    vetor C(A.Size);
+    double* c=new double[A.Size];
+
+    for(int i=0;i<A.Size;i++)
+    {
+     *(c+i)=this->V[i]- A.V[i];
+    }
+
+    C.setV(c);
+
+    return C;
+} else{
+std::cerr<<"vetores com tamanhos diferentes"<<std::endl;
+}
+}
+

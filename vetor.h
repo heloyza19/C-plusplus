@@ -8,26 +8,24 @@ class vetor
 public:
 
  	vetor(int t);
+	vetor ( const vetor &A);
 	~vetor();
-	vetor (const vetor &A);
+
+
 	void setV(double* A);
 	double* getV();
 	int getsize();
-	double *V;
-
-
 	void print();
 
 
 	//operadores
-	void operator =(const  vetor &A);
-	vetor operator + (vetor A);
+	void operator =(const vetor &);
+	vetor operator + (vetor &A);
+	vetor operator - (vetor &A);
 
 private:
-    void setsize(int t);
     int Size;
-
-
+    double *V;
 };
 
 

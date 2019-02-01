@@ -11,7 +11,7 @@ double* A=new double[tam]{1,2,3};
 double* B=new double [tam]{7, 5, 13};
 
 
-vetor U=(tam);
+vetor U(tam);
 U.setV(A);
 double *vetor1=U.getV();
 
@@ -25,8 +25,15 @@ double *vetor2=V.getV();
 cout<<"V";
 V.print();
 
+vetor C(tam);
+C=U+V;
+cout<<"U+V";
+C.print();
 
-vetor C=U+V;
+vetor D(tam);
+D=U-V;
+cout<<"U-V";
+D.print();
 
 
 
