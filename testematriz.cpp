@@ -38,62 +38,35 @@ for(int j=0;j<C;j++)
 
 matriz Mat (l,c);
 Mat.setM(M1);
+cout<<"Matriz 1=";
 Mat.print();
 
 
 matriz Mat2(L,C);
 Mat2.setM(M2);
+cout<<"Matriz 2=";
 Mat2.print();
 
 
-/*
-linearAlgebra* op= new linearAlgebra();
+matriz Mat3(L,C);
+Mat3=Mat+Mat2;
+cout<<"Matriz 1 + Matriz 2 =";
+Mat3.print();
+
+matriz Mat4(L,C);
+Mat4=Mat-Mat2;
+cout<<"Matriz 1 - Matriz 2 =";
+Mat4.print();
+
+matriz Mat5=Mat*Mat2;
+cout<<"Matriz 1 * Matriz 2 =";
+Mat5.print();
 
 
-matriz* S=op->add(Mat,Mat2);
-double** Ps=S->getM();
-
-cout<<endl<<"Matriz 1 + Matriz 2= "<<endl;
-
-for (int i=0;i<L;i++)
-{
-for(int j=0;j<C;j++)
-{
-cout<<*(*(Ps+i)+j)<<"\t";
-}
-cout<<endl;
-}
-
-matriz* P=op->produto(Mat,Mat2);
-double** Pp=P->getM();
-
-cout<<endl<<"\nMatriz 1 * Matriz 2= "<<endl;
-
-for (int i=0;i<l;i++)
-{
-for(int j=0;j<C;j++)
-{
-cout<<*(*(Pp+i)+j)<<"\t";
-}
-cout<<endl;
-}
+matriz Mat6=Mat*2;
+cout<<"Matriz 1 * 2=";
+Mat6.print();
 
 
-matriz* Q=op->produto(2,Mat2);
-double** Pq=Q->getM();
-
-cout<<endl<<"\n2 * Matriz 2= "<<endl;
-
-for (int i=0;i<L;i++)
-{
-for(int j=0;j<C;j++)
-{
-cout<<*(*(Pq+i)+j)<<"\t";
-}
-cout<<endl;
-}
-
-
-*/
 return 0;
 }

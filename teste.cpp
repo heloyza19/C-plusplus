@@ -35,7 +35,17 @@ D=U-V;
 cout<<"U-V";
 D.print();
 
+double pe;
+pe=U*V;
+cout<<"U*V= "<<pe<<endl;
 
+vetor pv=U.cross(V);
+cout<<"U X V";
+pv.print();
+
+vetor me= U*2;
+cout<<"2*U";
+me.print();
 
 return 0;
 }

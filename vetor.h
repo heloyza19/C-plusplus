@@ -2,7 +2,6 @@
 #define VETOR_H_INCLUDED
 #include <stdlib.h>
 
-
 class vetor
 {
 public:
@@ -17,11 +16,13 @@ public:
 	int getsize();
 	void print();
 
-
+	vetor cross(vetor &);
 	//operadores
 	void operator =(const vetor &);
-	vetor operator + (vetor &A);
-	vetor operator - (vetor &A);
+	vetor operator + (vetor &);
+	vetor operator - (vetor &);
+	double operator *(vetor &);
+	vetor operator *(double);
 
 private:
     int Size;

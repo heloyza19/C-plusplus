@@ -13,7 +13,9 @@ double **M;
 public:
 
 matriz(int m, int n);
-matriz (const matriz &A);
+matriz (const matriz &);
+
+
 void setM(double ** M1);
 int* getsize();
 double** getM();
@@ -21,6 +23,10 @@ void print();
 
 //operadores 
 void operator = (const matriz &A); 
+matriz operator + (matriz &A);
+matriz operator - (matriz &A);
+matriz operator * (matriz &B);
+matriz operator * (double n);
 
 
 };

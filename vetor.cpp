@@ -116,3 +116,51 @@ std::cerr<<"vetores com tamanhos diferentes"<<std::endl;
 }
 }
 
+double vetor::operator *(vetor &B){
+if(this->Size==B.Size)
+{
+    double p=0;
+    for(int i=0; i<B.Size; i++)
+    {
+      p+=this->V[i]* B.V[i]; 
+    }
+    return p;
+}
+else{
+std::cerr<<"Vetores com tamanhos diferentes\n" ;   
+}
+
+}
+
+vetor vetor::cross(vetor &B)
+{
+  if(this->Size==B.Size & B.Size==3)
+  {
+    vetor C(3);
+    double*c= new double[3];
+    
+    c[0]=(this->V[1]*B.V[2])-(this->V[2]*B.V[1]);
+    c[1]=(this->V[2]*B.V[0])-(this->V[0]*B.V[2]);
+    c[2]=(this->V[0]*B.V[1])-(this->V[1]*B.V[0]);
+    
+    C.setV(c);
+    return C;
+  }
+  else
+  {
+    cerr<<"Erro\n";  
+  }
+
+}
+
+vetor vetor::operator *(double n)
+{
+vetor C(this->Size);
+double* c=new double[this->Size];
+for(int i=0; i<this->Size;i++)
+{
+c[i]=n*this->V[i];
+}
+C.setV(c);
+return C;
+}
