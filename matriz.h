@@ -1,7 +1,7 @@
 #ifndef MATRIZ_H_INCLUDED
 #define MATRIZ_H_INCLUDED
 
-
+#include "vetor.cpp"
 
 class matriz{
 
@@ -27,6 +27,7 @@ matriz operator + (matriz &A);
 matriz operator - (matriz &A);
 matriz operator * (matriz &B);
 matriz operator * (double n);
+matriz operator * (vetor &B);
 
 
 };

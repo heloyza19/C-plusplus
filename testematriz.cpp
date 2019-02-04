@@ -36,6 +36,8 @@ for(int j=0;j<C;j++)
 }
 }
 
+
+/*
 matriz Mat (l,c);
 Mat.setM(M1);
 cout<<"Matriz 1=";
@@ -67,6 +69,6 @@ matriz Mat6=Mat*2;
 cout<<"Matriz 1 * 2=";
 Mat6.print();
 
-
+*/
 return 0;
 }

@@ -156,7 +156,6 @@ for(int j=0;j<B.Size[1];j++)    //colunas da nova matriz
 for (int k=0; k<this->Size[1];k++)   //linhas da matriz antiga
 {
     *(*(p+i)+j)+=this->M[i][j] * B.M[i][j];
-    //std::cout<<*(*(p+i)+j)<<"\t";
 }
 }
 }
@@ -184,4 +183,39 @@ for(int j=0;j<this->Size[1];j++)
 }
 M.setM(p);
 return M;
+
+matriz matriz::operator * (vetor &B)
+{
+
+if(this->Size[1]==B.Size)      //numero de colunas em A == numero de colunas em B
+{
+matriz P(this->Size[0],1);
+
+double** p=new double*[this->Size[0]];
+
+
+for(int i=0;i<this->Size[0];i++)  //tamanho das linhas da nova matriz
+{
+p[i]=new double[1];
+
+for(int j=0;j<1;j++)    //colunas da nova matriz
+{
+    *(*(p+i)+j)=0;
+for (int k=0; k<this->Size[1];k++)   //linhas da matriz antiga
+{
+    *(*(p+i)+j)+=this->M[i][j] * B.V[i];
 }
+}
+}
+P.setM(p);
+return P;
+}
+else{
+std::cerr<<"os requisitos para a multiplicacao nao foram cumpridos"<<std::endl;
+}
+
+
+
+
+}
+

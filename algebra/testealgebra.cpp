@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdio.h>
 #include "linearAlgebra.cpp"
 using namespace std;
 
@@ -16,10 +17,18 @@ U.print();
 
 linearAlgebra *L=new linearAlgebra();
 vetor Z=L->add(U,V);
-Z.print();
 
 
-system("PAUSE");
+for(int i=0;i<5000000;i++)
+{
+Z=L->add(U,V);
+//vetor Z(3);
+}
+
+
+
+
+
+//system("PAUSE");
 return 0;
-
 }
