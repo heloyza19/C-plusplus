@@ -1,104 +1,92 @@
 #include "linearAlgebra.h"
 
-
-
 using namespace std;
 
-linearAlgebra::linearAlgebra(){
 
-}
 
-vetor* linearAlgebra::add(vetor* A, vetor* B){
 
- vetor *C=new vetor(A->getsize());
+vetor linearAlgebra::add(vetor A, vetor B)
+{
+if(A.getsize()==B.getsize())
+{
+    vetor C(A.getsize());
+    double* c=new double[A.getsize()];
 
-if(A->getsize()==B->getsize()){
-
-    double *vetor1=A->getV();
-    double *vetor2=B->getV();
-    double s;
-    double* c=new double[A->getsize()];
-    for(int i=0;i<A->getsize();i++)
+    for(int i=0;i<A.getsize();i++)
     {
-     *(c+i)=*(vetor1+i)+ *(vetor2+i);
-    //C->setV(i,s);
+     c[i]=A.getV()[i]+ B.getV()[i];
     }
-    C->setV(c);
+    C.setV(c);
+    return C;
 }
 else
 {
-    cout<<"Vetores com tamanhos diferentes"<<endl;
+    std::cerr<<"Vetores com tamanhos diferentes"<<std::endl;
 }
- return C;
 }
 
 
 
-vetor* linearAlgebra::crossproduct(vetor* A, vetor* B)
+vetor linearAlgebra::crossproduct(vetor A, vetor B)
 {
-vetor *C=new vetor(A->getsize());
 
-if(A->getsize()==B->getsize() && A->getsize()==3)
+
+if(A.getsize()==B.getsize() && A.getsize()==3)
 {
-    double *vetor1=A->getV();
-    double *vetor2=B->getV();
-    double* c=new double[A->getsize()];
+    double* c=new double[A.getsize()];
+    vetor C (A.getsize());
 
-    c[0]=(vetor1[1]*vetor2[2])-(vetor1[2]*vetor2[1]);
-    c[1]=(vetor1[2]*vetor2[0])-(vetor1[0]*vetor2[2]);
-    c[2]=(vetor1[0]*vetor2[1])-(vetor1[1]*vetor2[0]);
+    c[0]=(A.getV()[1]*B.getV()[2])-(A.getV()[2]*B.getV()[1]);
+    c[1]=(A.getV()[2]*B.getV()[0])-(A.getV()[0]*B.getV()[2]);
+    c[2]=(A.getV()[0]*B.getV()[1])-(A.getV()[1]*B.getV()[0]);
 
-    C->setV(c);
+    C.setV(c);
 
     return C;
 }
 else
 {
-    cout<<"ERRO: Produto vetorial so eh definido no R3"<<endl;
-    return C;
+    std::cerr<<"ERRO: Produto vetorial so eh definido no R3"<<std::endl;
 }
 
 }
 
-double linearAlgebra::dotproduct(vetor* A, vetor* B)
+/*
+double linearAlgebra::dotproduct(vetor A, vetor B)
 {
 
-if(A->getsize()==B->getsize())
+if(A.getsize()==B.getsize())
 {
-    double *vetor1=A->getV();
-    double *vetor2=B->getV();
     double c=0;
 
-    for(int i=0;i<A->getsize();i++)
+    for(int i=0;i<A.getsize();i++)
     {
-       c=c+vetor1[i]*vetor2[i];
+       c+=A.getV[i] * B.getV[i];
     }
 
     return c;
 }
 else
 {
-    cout<<"Vetores com tamanhos diferentes"<<endl;
-    return 0;
+    cerr<<"Vetores com tamanhos diferentes"<<endl;
+
 }
 }
 
 
-vetor* linearAlgebra::produto(double A,vetor* B)
+vetor linearAlgebra::produto(double A,vetor B)
 {
-vetor *C=new vetor(B->getsize());
-double *vetor1=B->getV();
-//double* p=new double[B->getsize()];
-double *prod=new double[B->getsize()];
+vetor C(B.getsize());
+double *prod=new double[B.getsize()];
 
-for(int i=0;i<B->getsize();i++){
-*(prod+i)=*(vetor1+i)*A;
+for(int i=0;i<B.getsize();i++){
+prod[i]=B.getV[i]*A;
 }
-C->setV(prod);
+C.setV(prod);
 return C;
 }
 
-
+/*
 //Matrizes
 
 matriz* linearAlgebra::add(matriz* A,matriz* B)
@@ -195,3 +183,4 @@ for(int i=0;i<B->getsize()[0];i++)
 }
 
 
+*/
