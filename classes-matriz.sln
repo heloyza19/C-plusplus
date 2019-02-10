@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "classes-matriz", "classes-matriz\classes-matriz.vcxproj", "{F6C1F189-2E75-4830-9ACE-CB5C3E70CE0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6C1F189-2E75-4830-9ACE-CB5C3E70CE0A}.Debug|x64.ActiveCfg = Debug|x64
+		{F6C1F189-2E75-4830-9ACE-CB5C3E70CE0A}.Debug|x64.Build.0 = Debug|x64
+		{F6C1F189-2E75-4830-9ACE-CB5C3E70CE0A}.Debug|x86.ActiveCfg = Debug|Win32
+		{F6C1F189-2E75-4830-9ACE-CB5C3E70CE0A}.Debug|x86.Build.0 = Debug|Win32
+		{F6C1F189-2E75-4830-9ACE-CB5C3E70CE0A}.Release|x64.ActiveCfg = Release|x64
+		{F6C1F189-2E75-4830-9ACE-CB5C3E70CE0A}.Release|x64.Build.0 = Release|x64
+		{F6C1F189-2E75-4830-9ACE-CB5C3E70CE0A}.Release|x86.ActiveCfg = Release|Win32
+		{F6C1F189-2E75-4830-9ACE-CB5C3E70CE0A}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5558014-685E-46FA-8D59-2DD2F19B2037}
+	EndGlobalSection
+EndGlobal
